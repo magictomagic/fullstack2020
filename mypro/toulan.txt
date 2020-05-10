@@ -1,0 +1,3 @@
+gcc proc.c && ./a.out 47.94.157.136
+
+gcc clientM.c && ./a.out 47.94.157.136
