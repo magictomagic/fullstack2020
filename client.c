@@ -68,7 +68,7 @@ int main()
 
 */ 
     // 向服务器发起连接，连接成功后client_socket_fd代表了客户端和服务器的一个socket连接
-    if(connect(client_socket_fd, (struct sockaddr*)&server_addr, server_addr_length) < 0)
+    if(connect(client_socket_fd, (struct sockaddr*)&server_addr, server_addr_length) < 0)////
     {
         perror("Can Not Connect To Server IP:");
         exit(0);
@@ -88,12 +88,12 @@ int main()
        containing '\0') to that area.
 
  */
-    char buffer[BUFFER_SIZE];
-    bzero(buffer, BUFFER_SIZE);
-    strncpy(buffer, file_name, strlen(file_name)>BUFFER_SIZE?BUFFER_SIZE:strlen(file_name));
+    char buffer[BUFFER_SIZE];////
+    bzero(buffer, BUFFER_SIZE);////
+    strncpy(buffer, file_name, strlen(file_name)>BUFFER_SIZE?BUFFER_SIZE:strlen(file_name));////
     
     // 向服务器发送buffer中的数据
-    if(send(client_socket_fd, buffer, BUFFER_SIZE, 0) < 0)
+    if(send(client_socket_fd, buffer, BUFFER_SIZE, 0) < 0)////
     {
         perror("Send File Name Failed:");
         exit(1);
